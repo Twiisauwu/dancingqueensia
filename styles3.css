@@ -1,0 +1,269 @@
+:root{
+  --bg: #f4e6f4;      /* lila suave */
+  --text: #7a5a8f;    /* morado */
+  --text-2: #6a4a82;
+  --white: #ffffff;
+  --shadow: 0 6px 18px rgba(0,0,0,.08);
+  --radius: 999px;
+}
+
+*{ box-sizing: border-box; }
+
+/* CLAVE: permite que el hero use el alto restante sin tapar el header */
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #222;
+}
+
+/* Header */
+.site-header{
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.header-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.brand{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: transparent;
+}
+.brand img{
+  height: 100px;
+  width: auto;
+  display: block;
+  background: transparent;
+}
+
+/* Nav escritorio */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav a{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+
+.nav a:hover{
+  background: rgba(255,255,255,.55);
+  color: var(--text-2);
+  transform: translateY(-1px);
+}
+
+/* Botón Postular (para que se note) */
+.nav a.btn{
+  background: rgba(255,255,255,.90);
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 14px rgba(122, 90, 143, .18);
+}
+.nav a.btn:hover{
+  background: var(--white);
+}
+
+/* Móvil */
+.nav-toggle{
+  display: none;
+  border: 0;
+  background: rgba(255,255,255,.6);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav-mobile{
+  display: none;
+  flex-direction: column;
+  padding: 0 18px 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 8px;
+}
+
+.nav-mobile a{
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 12px 12px;
+  background: rgba(255,255,255,.55);
+  border-radius: 12px;
+}
+
+.nav-mobile.open{
+  display: flex;
+}
+
+
+/* =========================
+   LINE-UP (corregido)
+========================= */
+
+.lineup-section{
+  width: 100%;
+  padding: 34px 20px;
+
+  background-image: url("fondo1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lineup-content{
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Botón título (igual estilo Historia) */
+.lineup-title{
+  display: flex;
+  justify-content: center;
+}
+
+.lineup-title span{
+  background: #fff;
+  color: #8b63a9;
+  font-size: 42px;
+  font-weight: 700;
+
+  padding: 18px 60px;
+  border-radius: 16px;
+
+  box-shadow:
+    6px 6px 0 #8b63a9,
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Caja lila */
+.lineup-box{
+  background: rgba(209, 190, 231, 0.92);
+  border: 2px solid #8b63a9;
+  border-radius: 18px;
+  padding: 36px 30px;
+}
+
+/* Grid con 3 arriba + 2 abajo centradas */
+.lineup-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 38px 36px;
+  justify-items: center;
+}
+
+/* Centrar la fila inferior (4 y 5) como en tu imagen */
+.member:nth-child(4){
+  grid-column: 1 / span 1;
+  justify-self: center;
+}
+.member:nth-child(5){
+  grid-column: 3 / span 1;
+  justify-self: center;
+}
+
+/* Miembro */
+.member{
+  margin: 0;
+  text-align: center;
+}
+
+.member img{
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  background: #fff;
+  border: 6px solid #fff;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+}
+
+/* Si alguna cara queda cortada, prueba esto:
+.member img{ object-position: center 25%; }
+*/
+
+.member figcaption{
+  margin-top: 12px;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 500;
+  color: #3c2a4d;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px){
+  .lineup-content{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .lineup-title span{
+    font-size: 34px;
+    padding: 16px 40px;
+  }
+
+  .lineup-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* En 2 columnas ya no sirve el “3 arriba + 2 abajo”, lo reseteamos */
+  .member:nth-child(4),
+  .member:nth-child(5){
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 520px){
+  .lineup-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .member img{
+    width: 150px;
+    height: 150px;
+  }
+
+  .member figcaption{
+    font-size: 22px;
+  }
+}

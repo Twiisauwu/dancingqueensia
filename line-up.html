@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="styles3.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <img src="logo.svg" alt="Dancing Queens LA">
+      </a>
+
+      <!-- Menú -->
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="bienvenida.html">Bienvenida</a>
+        <a href="historia.html">Historia</a>
+        <a href="requisitos.html">Requisitos</a>
+        <a class="btn" href="postular.html">Postular</a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="nav-mobile" aria-label="Navegación móvil">
+      <a href="historia.html">Historia</a>
+      <a href="line-up.html">Line-up</a>
+      <a href="requisitos.html">Requisitos</a>
+      <a href="postular.html">Postular</a>
+    </nav>
+  </header>
+
+<section class="historia-section">
+
+  <div class="historia-content">
+
+  
+
+   <section class="lineup-section" aria-labelledby="lineup-title">
+  <div class="lineup-content">
+
+    <!-- Botón / Título -->
+    <div class="lineup-title">
+      <span id="lineup-title">Line-Up</span>
+    </div>
+
+    <!-- Caja principal -->
+    <div class="lineup-box">
+
+      <div class="lineup-grid">
+        <figure class="member">
+          <img src="neon.svg" alt="Neon">
+          <figcaption>Neon</figcaption>
+        </figure>
+
+        <figure class="member">
+          <img src="aura.svg" alt="Aura">
+          <figcaption>Aura</figcaption>
+        </figure>
+
+        <figure class="member">
+          <img src="lumi.svg" alt="Lumi">
+          <figcaption>Lumi</figcaption>
+        </figure>
+
+        <figure class="member">
+          <img src="iris.svg" alt="Iris">
+          <figcaption>Iris</figcaption>
+        </figure>
+
+        <figure class="member">
+          <img src="nova.svg" alt="Nova">
+          <figcaption>Nova</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    const btn = document.querySelector(".nav-toggle");
+    const mobile = document.querySelector(".nav-mobile");
+
+    btn.addEventListener("click", () => {
+      const open = mobile.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+
+</body>
+</html>

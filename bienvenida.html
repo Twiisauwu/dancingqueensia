@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <img src="logo.svg" alt="Dancing Queens LA">
+      </a>
+
+      <!-- Menú -->
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="historia.html">Historia</a>
+        <a href="line-up.html">Line-up</a>
+        <a href="requisitos.html">Requisitos</a>
+        <a class="btn" href="postular.html">Postular</a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        ☰
+      </button>
+
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="nav-mobile" aria-label="Navegación móvil">
+      <a href="historia.html">Historia</a>
+      <a href="line-up.html">Line-up</a>
+      <a href="requisitos.html">Requisitos</a>
+      <a href="postular.html">Postular</a>
+    </nav>
+  </header>
+
+  <!-- HERO (full ventana, respetando header) -->
+  <main>
+    <section class="hero" aria-labelledby="bienvenida-title">
+      <div class="hero-card">
+
+        <div class="hero-text">
+          <h1 id="bienvenida-title">¡Bienvenida!</h1>
+
+          <p>
+            Soy Isabel Díaz, tengo 25 años y soy la fundadora de este proyecto.
+            Como verás tengo conocimientos en programación, ya que soy Ingeniera en Informática.
+          </p>
+
+          <p>
+            Estoy muy emocionada por formar este grupo, mi objetivo es que las 4 compañeras
+            que formen esto conmigo tengamos algo sólido, logremos que salga hermoso y por sobretodo
+            que sea entretenido uwu.
+          </p>
+
+          <p>
+            Te invito a revisar las demás secciones para que tengas más información y si te interesa
+            eres ¡bienvenida a postular!
+          </p>
+
+          <div class="hero-actions">
+            
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <img src="gatito.svg" alt="">
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const btn = document.querySelector(".nav-toggle");
+    const mobile = document.querySelector(".nav-mobile");
+
+    btn.addEventListener("click", () => {
+      const open = mobile.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  </script>
+
+</body>
+</html>

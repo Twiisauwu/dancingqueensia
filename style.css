@@ -1,0 +1,86 @@
+/* Fondo full pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url("fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Layout similar a la imagen */
+.pantalla {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Ajusta esto para que el logo quede a la misma altura que tu referencia */
+  padding-top: 70px;
+}
+
+/* Logo centrado */
+.logo {
+  width: min(780px, 92vw);
+  height: auto;
+  display: block;
+}
+
+/* Botón pill (como en la imagen) */
+.btn-ingresar {
+  margin-top: 34px; /* ajusta para acercarlo/alejarlo de I.A. */
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+
+  padding: 18px 18px 18px 42px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 22px;
+
+  color: #b86abf;
+  background: rgba(255, 255, 255, 0.70);
+
+  box-shadow:
+    0 10px 25px rgba(160, 90, 190, 0.18),
+    0 0 22px rgba(255, 200, 255, 0.35);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Texto */
+.btn-texto {
+  line-height: 1;
+}
+
+/* Circulito a la derecha con flecha */
+.btn-icono {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(184, 106, 191, 0.35);
+  color: #ffffff;
+  font-size: 28px;
+
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+/* Hover */
+.btn-ingresar:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 14px 32px rgba(160, 90, 190, 0.22),
+    0 0 30px rgba(255, 200, 255, 0.45);
+}
