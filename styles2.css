@@ -217,3 +217,69 @@ body{
     font-size: 16px;
   }
 }
+/* =========================
+   RESPONSIVE HEADER + HISTORIA (MEJORADO)
+========================= */
+
+/* 1) HEADER RESPONSIVE */
+@media (max-width: 900px){
+  /* oculta menú desktop y muestra botón hamburguesa */
+  .nav { display: none; }
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* reduce logo en móvil */
+  .brand img { height: 64px; }
+
+  /* header más compacto */
+  .header-inner{
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  /* menú desplegable a ancho completo */
+  .nav-mobile{
+    padding: 0 12px 14px;
+  }
+}
+
+/* 2) MÓVILES PEQUEÑOS (TELÉFONOS) */
+@media (max-width: 480px){
+  /* logo aún más pequeño para no ocupar toda la barra */
+  .brand img { height: 54px; }
+
+  /* botón hamburguesa más “tocable” */
+  .nav-toggle{
+    padding: 10px 14px;
+    font-size: 20px;
+  }
+
+  /* HISTORIA: menos padding + textos más cómodos */
+  .historia-section{
+    padding: 26px 14px;
+  }
+
+  .historia-title span{
+    font-size: 28px;
+    padding: 14px 28px;
+
+    /* sombra menos pesada para móvil */
+    box-shadow:
+      4px 4px 0 #8b63a9,
+      0 8px 18px rgba(0,0,0,0.14);
+  }
+
+  .historia-box{
+    padding: 20px 18px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .historia-highlight{
+    font-size: 16px;
+  }
+}
+
+/* 3) iOS: evita zoom raro en inputs (si luego agregas formularios)
+   y mejora render */
+body { -webkit-text-size-adjust: 100%; }
+
