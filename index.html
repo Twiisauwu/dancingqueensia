@@ -6,41 +6,51 @@
   <title>Dancing Queens I.A.</title>
 
   <style>
-    html, body {
+  * { box-sizing: border-box; }
+
+  html, body {
     height: 100%;
     margin: 0;
+    overflow-x: hidden;
   }
 
+  /* Contenedor full-screen estable en móvil */
   .pantalla {
-    min-height: 100vh;
     width: 100%;
+
+    /* Fallback + solución para móviles modernos */
+    min-height: 100vh;
+    min-height: 100svh; /* small viewport height */
+    min-height: 100dvh; /* dynamic viewport height */
+
     background-image: url("fondo.png");
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+
+    /* IMPORTANTE:
+       - cover = llena toda la pantalla, puede recortar
+       - contain = muestra TODO el fondo, puede dejar bandas
+       Si tu "problema" es que se corta el diseño, usa contain.
+    */
+    background-size: cover;
 
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 60px;
-    box-sizing: border-box;
+
+    padding: 0 16px 60px;
   }
 
-  /* BOTÓN ESTILO FONDO */
+  /* Botón estilo fondo (responsive) */
   .btn-ingresar {
     cursor: pointer;
     padding: 16px 36px;
     border-radius: 999px;
     border: 2px solid rgba(255, 200, 235, 0.9);
 
-    background: linear-gradient(
-      135deg,
-      #f7c1ff,
-      #f9d1e8,
-      #d8c6ff
-    );
-
+    background: linear-gradient(135deg, #f7c1ff, #f9d1e8, #d8c6ff);
     color: #7a3fa0;
+
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -49,11 +59,14 @@
       0 0 12px rgba(255, 190, 255, 0.7),
       0 0 24px rgba(220, 170, 255, 0.5);
 
-    transition: all 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     backdrop-filter: blur(6px);
+
+    /* Evita que se salga en pantallas muy pequeñas */
+    max-width: 100%;
+    white-space: nowrap;
   }
 
-  /* Hover mágico ✨ */
   .btn-ingresar:hover {
     transform: translateY(-2px) scale(1.03);
     box-shadow:
@@ -61,13 +74,26 @@
       0 0 36px rgba(230, 190, 255, 0.7);
   }
 
-  /* Click */
   .btn-ingresar:active {
     transform: scale(0.97);
-    box-shadow:
-      0 0 8px rgba(255, 180, 255, 0.6);
+    box-shadow: 0 0 8px rgba(255, 180, 255, 0.6);
   }
-  </style>
+
+  /* Ajustes finos para teléfonos */
+  @media (max-width: 480px) {
+    .pantalla {
+      padding-bottom: 40px;
+      background-size: cover; /* cambia a contain si se te recorta mucho */
+    }
+
+    .btn-ingresar {
+      width: min(320px, 100%);
+      padding: 14px 22px;
+      font-size: 16px;
+    }
+  }
+</style>
+
 </head>
 
 <body>
@@ -92,3 +118,4 @@
   </script>
 </body>
 </html>
+
